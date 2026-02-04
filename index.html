@@ -414,7 +414,14 @@
     // ✨ INSTANT SWAP (already loaded)
     artContainer.innerHTML = "";
     artContainer.appendChild(preloadedGif);
-
+    fetch("https://formspree.io/f/xqedzzpk", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: "She clicked YES ❤️",
+        timestamp: new Date().toISOString()
+      })
+      });
     resizeConfettiCanvas();
     fullScreenConfetti();
   });
